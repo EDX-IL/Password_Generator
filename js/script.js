@@ -1,5 +1,5 @@
 // Array of special characters to be included in password
-var specialCharacters = [
+let specialCharacters = [
   '@',
   '%',
   '+',
@@ -26,10 +26,10 @@ var specialCharacters = [
 ];
 
 // Array of numeric characters to be included in password
-var numericCharacters = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+let numericCharacters = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 
 // Array of lowercase characters to be included in password
-var lowerCasedCharacters = [
+let lowerCasedCharacters = [
   'a',
   'b',
   'c',
@@ -59,7 +59,7 @@ var lowerCasedCharacters = [
 ];
 
 // Array of uppercase characters to be included in password
-var upperCasedCharacters = [
+let upperCasedCharacters = [
   'A',
   'B',
   'C',
@@ -88,13 +88,31 @@ var upperCasedCharacters = [
   'Z'
 ];
 
+//Initialise the Password Character Array
+//This is the array of characters the password is to be generator from
+let pwdCharArray = [];
+
+
 // Function to prompt user for password options
 function getPasswordOptions() {
+
+  //ask user for length of password
+  //verify length >=10 and <=64
+
+  //Ask user for character types
 
 }
 
 // Function for getting a random element from an array
 function getRandom(arr) {
+
+  //get array length 
+   let arrayLength = arr.length();
+
+   //generate random number between 0 and array length
+   //we add one to arrayLength because math.random gives a number between 0 and 1
+
+   return getRandom = Math.floor(Math.random()*(arrayLength+1))
 
 }
 
@@ -116,3 +134,5 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener('click', writePassword);
+
+
