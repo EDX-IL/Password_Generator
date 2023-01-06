@@ -96,8 +96,16 @@ let pwdCharArray = [];
 // Function to prompt user for password options
 function getPasswordOptions() {
 
-  //ask user for length of password
-  //verify length >=10 and <=64
+  //ask user for length of password pwdLen
+  //verify pwdLen >=10 and <=64 and is a number
+  //initialise pwdLen
+  let pwdLen = 0 ;
+  do {
+     pwdLen = Number(window.prompt("How many Characters you want your password to be ? 10-64 "));
+     // add 2nd more detailed instruction if first prompt fails
+     // and/or instruction which notes what mistake was made and prompts 
+    } while ((pwdLen <10) || (pwdLen>64) || isNaN(pwdLen) );
+
 
   //Ask user for character types
 
@@ -119,10 +127,11 @@ function getRandom(arr) {
 // Function to generate password with user input
 function generatePassword() {
 
+
 }
 
 // Get references to the #generate element
-var generateBtn = document.querySelector('#generate');
+let generateBtn = document.querySelector('#generate');
 
 // Write password to the #password input
 function writePassword() {
@@ -136,3 +145,4 @@ function writePassword() {
 generateBtn.addEventListener('click', writePassword);
 
 
+getPasswordOptions();
