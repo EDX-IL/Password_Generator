@@ -89,19 +89,18 @@ let upperCasedCharacters = [
 ];
 
 //Initialise the Password Character Array
-//This is the array of characters the password is to be generator from
+//This is the array of characters the password is to be generated from
 let pwdCharArray = [];
-//console.log("TypeOf="+ typeof pwdCharArray);
-//initialise pwdLen (Password Length)
-let pwdLen = 0 ;
+
+//initialise pwdLen to zer0 (Password Length)
+let pwdLen = 0;
 
 // Function to prompt user for password options
 function getPasswordOptions() {
 
-  //initialise pwdCharArray for when user presses button more than once
+  //initialise pwdCharArray for when user presses generate password button more than once
   pwdCharArray = [];
-  // console.log("TypeOfInsideGetPasswordOptions="+ typeof pwdCharArray);
-
+  
   //ask user for length of password pwdLen
   //verify pwdLen >=10 and <=64 and is a number
   do {
@@ -149,11 +148,9 @@ function getPasswordOptions() {
 // Function for getting a random element from an array
 function getRandom(arr) {
 
-   //generate random number between 0 and array length
-   //math.random gives a number between 0 and 1. multiply by array length
- 
+   //generate random number between 0 and array length-1
+   //This is achieved by math.random gives a number between 0 and 1. multiply by array length
     return  ( arr.at(Math.floor(Math.random()*(arr.length)))) ;
-
 }
 
 // Function to generate password with user input
@@ -162,18 +159,15 @@ function generatePassword() {
   //Get Password Options From User
   getPasswordOptions();
 
-   //start with empty password - Generated Password
-  let genPwd = [];
+  //start with empty password -genPwd = Generated Password
+  let genPwd = "";
   
-  //For loop until pwdLen met
+  //For loop until pwdLen met. Add to genPwd with random character on each loop
   for (let index = 0; index < pwdLen; index++) {
-     
-     genPwd += (getRandom(pwdCharArray));
-
+      genPwd += (getRandom(pwdCharArray));
   }
-  
-  console.log("Generated Password=" + genPwd +" TypeOf "+typeof genPwd);
-//Return password to function  
+
+  //Return password to function  
 return  genPwd;
 
 }
@@ -186,12 +180,8 @@ function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector('#password');
 
-  passwordText.value = password;
-  
+  passwordText.value = password; 
 }
 
 // Add event listener to generate button
 generateBtn.addEventListener('click', writePassword);
-
-
-
