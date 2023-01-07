@@ -91,7 +91,7 @@ let upperCasedCharacters = [
 //Initialise the Password Character Array
 //This is the array of characters the password is to be generator from
 let pwdCharArray = [];
-
+//console.log("TypeOf="+ typeof pwdCharArray);
 //initialise pwdLen (Password Length)
 let pwdLen = 0 ;
 
@@ -100,6 +100,7 @@ function getPasswordOptions() {
 
   //initialise pwdCharArray for when user presses button more than once
   pwdCharArray = [];
+  // console.log("TypeOfInsideGetPasswordOptions="+ typeof pwdCharArray);
 
   //ask user for length of password pwdLen
   //verify pwdLen >=10 and <=64 and is a number
@@ -140,7 +141,7 @@ function getPasswordOptions() {
           pwdCharArray = pwdCharArray.concat(specialCharacters);
         }
         
-    } while (pwdCharArray.length === 0);
+    } while (pwdCharArray.length == 0);
 
 
 }
@@ -148,15 +149,10 @@ function getPasswordOptions() {
 // Function for getting a random element from an array
 function getRandom(arr) {
 
-  //get array length 
-   let arrayLength = arr.length;
-   console.log ("array len=" + arrayLength);
    //generate random number between 0 and array length
-   //we add one to arrayLength because math.random gives a number between 0 and 1
-
-  // return getRandom = Math.floor(Math.random()*(arrayLength+1));
-
-  return getRandom = ['GR'];
+   //math.random gives a number between 0 and 1. multiply by array length
+ 
+    return  ( arr.at(Math.floor(Math.random()*(arr.length)))) ;
 
 }
 
@@ -166,23 +162,19 @@ function generatePassword() {
   //Get Password Options From User
   getPasswordOptions();
 
-  console.log(pwdCharArray);
-
-  //start with empty password
-  let genPwd = ['test'];
+   //start with empty password - Generated Password
+  let genPwd = [];
+  
   //For loop until pwdLen met
   for (let index = 0; index < pwdLen; index++) {
-      //get a random element from the array
-      //add element to password 
-     // console.log(getRandom(pwdCharArray));
-      console.log(genPwd);
-      console.log(index);
-    
+     
+     genPwd += (getRandom(pwdCharArray));
+
   }
   
-
+  console.log("Generated Password=" + genPwd +" TypeOf "+typeof genPwd);
 //Return password to function  
-return generatePassword = genPwd;
+return  genPwd;
 
 }
 
