@@ -105,7 +105,7 @@ function getPasswordOptions() {
   // ask user for length of password pwdLen
   // verify pwdLen >=10 and <=64 and is a number otherwise re-ask question
   do {
-     pwdLen = Number(window.prompt("How many Characters you want your password to be ? 10-64 "));
+     pwdLen = Number(window.prompt("How many Characters do you want your password to be ? 10-64 "));
      // TO ADD  2nd more detailed instruction if first prompt fails to get correct input
      // TO ADD and/or instruction which notes what mistake was made and prompts 
      // TO ADD after X attempts exit gracefully 
