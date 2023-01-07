@@ -19,9 +19,25 @@
 
 ### The challenge
 
-The challenge requires me to create an application that an employee can use to generate a random password based on criteria they’ve selected by modifying starter code. This app will run in the browser, and will feature dynamically updated HTML and CSS powered by JavaScript code that you write. It will have a clean and polished user interface that is responsive, ensuring that it adapts to multiple screen sizes.
+The challenge required me to create an application that an employee can use to generate a random password based on criteria they’ve selected by modifying starter code. This app runs in the browser, features dynamically updated HTML and CSS powered by JavaScript. It has a clean and polished user interface that is responsive, and adapts to multiple screen sizes.
+
+The apps generates a password when the "Generate Password" button is clicked by
+  * Asking the user for the length of password they require
+      * The length is at least 10 characters but no more than 64.
+      * It also checks for input that isn't expected and re-asks the question
+    * The user is then asked which of the following they want in their password
+      * Lowercase
+      * Uppercase
+      * Numeric
+      * Special characters ($@%&*, etc)
+  * If the user doesn't select any they are asked again for their input
+  * Once the user prompts are answered the password generated is displayed on the page.
+
+
 
 ### Screenshot
+
+The following image shows the web application's appearance and functionality:
 
 ![](./assets/screenshot.png)
 
@@ -100,3 +116,4 @@ Better User Experience: So that if the user is continually entering the wrong in
 - Noah Camara (TA) who has been very supportive
 - Andrew Layendecker who helped with the challenge in the homework session breakout room
 - Scott Nelson for the READ.ME template which i've used. It's something i've not done well on to date. Finally i think this might be the way forward!
+- Dane Edwards - Class Instructor 
